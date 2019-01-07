@@ -31,6 +31,11 @@ const port = 8080;
 // require modules
 const path = require("path");
 const fs = require("fs");
-const express = require("express");
+const eliapi = require("./eliapi.js");
 const util = require("util");
+const express = require("express");
+
+// initalizing express
 const app = express();
+
+//
