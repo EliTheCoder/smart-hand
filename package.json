@@ -12,7 +12,11 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "eliapi": "0.0.1",
     "express": "^4.16.3",
-    "socket.io": "^2.0.4"
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "socket.io": "^2.0.4",
+    "util": "^0.11.1"
   }
 }
