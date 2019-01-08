@@ -1,4 +1,4 @@
-# Issue Templates for Synergy
+# Issue Templates for Smart Hand
 
 ## Bugs
 #### Expected Behavior
