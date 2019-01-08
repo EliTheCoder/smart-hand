@@ -39,7 +39,6 @@ const express = require("express");
 const app = express();
 
 // starting express server
-
 app.use(express.static(path.join(__dirname, '/static')));
 
 const server = app.listen(process.env.PORT || port, () => {
