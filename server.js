@@ -39,16 +39,16 @@ const express = require("express");
 const app = express();
 
 // starting express server
-<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, '/static')));
 
 const server = app.listen(process.env.PORT || port, () => {
   eliapi.logMessage(0, "SERVER RUNNING: PORT: " + port);
-=======
-
-app.use(express.static(path.join(__dirname, '/static')));
-
-const server = app.listen(process.env.PORT || port, () => {
-  logMessage(0, "SERVER RUNNING: PORT: " + port);
->>>>>>> a430fe817be92e1f97b3ff92a8ed1a5093f8fdeb
 });
+
+// starting socket.io server
+const io = require('socket.io')(server);
+
+// managing socket.io connections
+io.on('connection', socket => {
+  logMessage(0, "CLIENT CONNECTED WITH IP ADDRESS: " + socket.request.connection.remoteAddress.split(':').slice(3)[0]);
+}
