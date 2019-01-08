@@ -51,4 +51,4 @@ const io = require('socket.io')(server);
 // managing socket.io connections
 io.on('connection', socket => {
   logMessage(0, "CLIENT CONNECTED WITH IP ADDRESS: " + socket.request.connection.remoteAddress.split(':').slice(3)[0]);
-}
+});
