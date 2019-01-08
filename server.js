@@ -38,4 +38,10 @@ const express = require("express");
 // initalizing express
 const app = express();
 
-//
+// starting express server
+
+app.use(express.static(path.join(__dirname, '/static')));
+
+const server = app.listen(process.env.PORT || port, () => {
+  eliapi.logMessage(0, "SERVER RUNNING: PORT: " + port);
+});
