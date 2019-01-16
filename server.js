@@ -35,21 +35,34 @@ const eliapi = require("eliapi");
 const util = require("util");
 const express = require("express");
 
+// declaring varibles
+let rooms = [];
+
 // initalizing express
 const app = express();
 
 // starting express server
-app.use(express.static(path.join(__dirname, '/static')));
+app.use(express.static(path.join(__dirname, "/static")));
 
 const server = app.listen(process.env.PORT || port, () => {
-  eliapi.logMessage(0, "web server running port: " + port);
+  eliapi.logMessage(0, "web server running on port: " + port);
 });
 
 // starting socket.io server
-const io = require('socket.io')(server);
-eliapi.logMessage(0, "socket.io server running port: " + port);
+const io = require("socket.io")(server);
+eliapi.logMessage(0, "socket.io server running on port: " + port);
 
 // managing socket.io connections
-io.on('connection', socket => {
-  eliapi.logMessage(0, "socket client connected with ip:" + socket.request.connection.remoteAddress.split(':').slice(3)[0]);
+io.on("connection", socket => {
+
+  // logging socket's ip address
+  eliapi.logMessage(0, "socket client connected with ip:" + socket.request.connection.remoteAddress.split(":").slice(3)[0]);
+
+  // sending all sockets to default room
+  socket.join("default");
+
+  // letting sockets pick their rooms
+  socket.on("connectroom", data => {
+    socket.join(data);
+  });
 });
