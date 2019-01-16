@@ -65,4 +65,21 @@ io.on("connection", socket => {
   socket.on("connectroom", data => {
     socket.join(data);
   });
+
+  socket.on("teacher", data => {
+    let newCode = makeId();
+    socket.emit(newCode);
+    socket.join(newCode);
+  })
 });
+
+// function for generating random codes
+function makeId() {
+  var text = "";
+  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
