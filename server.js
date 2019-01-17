@@ -64,13 +64,18 @@ io.on("connection", socket => {
   // letting sockets pick their rooms
   socket.on("connectroom", data => {
     socket.join(data);
+    socket.leave("default");
   });
 
+  // generating rooms for teacher clients
   socket.on("teacher", data => {
     let newCode = makeId();
-    socket.emit(newCode);
+    socket.emit("sendCode", newCode);
     socket.join(newCode);
-  })
+    socket.leave("default");
+  });
+
+  eliapi.logMessage(0, socket.rooms);
 });
 
 // function for generating random codes
