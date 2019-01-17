@@ -48,6 +48,26 @@ const server = app.listen(process.env.PORT || port, () => {
   eliapi.logMessage(0, "web server running on port: " + port);
 });
 
+// allowing console commands
+// process.stdin.resume();
+// process.stdin.setEncoding('utf8');
+//
+// process.stdin.on('data', function(text) {
+//   if (text.trim() === 'quit') {
+//     done();
+//   }
+//   try {
+//     eliapi.logMessage(3, eval(text.trim()));
+//   } catch (err) {
+//     eliapi.logMessage(2, err.toString());
+//   }
+// });
+//
+// function done() {
+//   console.log('Quiting..');
+//   process.exit();
+// }
+
 // starting socket.io server
 const io = require("socket.io")(server);
 eliapi.logMessage(0, "socket.io server running on port: " + port);
@@ -75,7 +95,13 @@ io.on("connection", socket => {
     socket.leave("default");
   });
 
-  eliapi.logMessage(0, socket.rooms);
+  // broadcasting new question to room
+  socket.on("question", data => {
+    Object.keys(socket.rooms).forEach(room => {
+      socket.to(room).emit("question", data);
+    });
+  });
+
 });
 
 // function for generating random codes
