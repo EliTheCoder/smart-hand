@@ -38,19 +38,21 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
   </nav>
   <div class="jumbotron">
     <div class="container">
-      <form class="navbar-form navbar-right">
-        <div class="form-group">
-          <input type="text" placeholder="Email" class="form-control">
-        </div>
-        <div class="form-group">
-          <input type="password" placeholder="Password" class="form-control">
-        </div>
-        <button type="submit" class="btn btn-success">Sign in</button>
-      </form>
       <hr />
+      <div class="form-group">
+        <input type="text" placeholder="Class PIN" class="form-control" id="class-pin">
+      </div>
+      <hr />
+      <div class="form-group">
+        <input type="text" placeholder="Question" class="form-control" id="question">
+      </div>
+      <hr />
+      <button onclick="send()" class="btn btn-lg btn-success send-button">Send</button>
     </div>
   </div>
   <footer>Copyright &copy; Eli Frigo 2019</footer>
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+  <script src="main.js"></script>
 </body>

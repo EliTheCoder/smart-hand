@@ -85,6 +85,7 @@ io.on("connection", socket => {
   socket.on("connectroom", data => {
     socket.join(data);
     socket.leave("default");
+    eliapi.logMessage(0, "connectroom event: " + data);
   });
 
   // generating rooms for teacher clients
@@ -93,6 +94,7 @@ io.on("connection", socket => {
     socket.emit("sendCode", newCode);
     socket.join(newCode);
     socket.leave("default");
+    eliapi.logMessage(0, "teacher event");
   });
 
   // broadcasting new question to room
@@ -100,6 +102,7 @@ io.on("connection", socket => {
     Object.keys(socket.rooms).forEach(room => {
       socket.to(room).emit("question", data);
     });
+    eliapi.logMessage(0, "question: " + data);
   });
 
 });
