@@ -99,9 +99,7 @@ io.on("connection", socket => {
 
   // broadcasting new question to room
   socket.on("question", data => {
-    Object.keys(socket.rooms).forEach(room => {
-      socket.to(room).emit("question", data);
-    });
+    socket.to(data.pin).emit("question", data.question)
     eliapi.logMessage(0, "question: " + data);
   });
 
