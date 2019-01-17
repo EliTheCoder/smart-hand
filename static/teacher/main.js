@@ -10,5 +10,5 @@ socket.on("sendCode", data => {
 });
 
 socket.on("question", data => {
-  $(".jumbotron").after("<div class=\"container-fluid\"><h2 class=\"text-center\">" + data  +"</h2></div>");
+  $(".jumbotron").after("<div class=\"container-fluid\"><h2 class=\"text-center\">" + data + "</h2></div>");
 });
