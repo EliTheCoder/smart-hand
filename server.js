@@ -59,7 +59,7 @@ const credentials = {
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(80, () => {
+const server = httpServer.listen(80, () => {
 	eliapi.logMessage('HTTP Server running on port 80');
 });
 
@@ -89,7 +89,7 @@ httpsServer.listen(443, () => {
 
 // starting socket.io server
 const io = require("socket.io")(server);
-eliapi.logMessage(0, "socket.io server running on port: " + port);
+eliapi.logMessage(0, "socket.io server running on port: 80 and 443");
 
 // managing socket.io connections
 io.on("connection", socket => {
