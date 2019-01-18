@@ -34,6 +34,7 @@ const fs = require("fs");
 const eliapi = require("eliapi");
 const util = require("util");
 const express = require("express");
+const xss = require("xss");
 
 // declaring varibles
 let rooms = [];
@@ -48,26 +49,6 @@ const server = app.listen(process.env.PORT || port, () => {
   eliapi.logMessage(0, "web server running on port: " + port);
 });
 
-// allowing console commands
-// process.stdin.resume();
-// process.stdin.setEncoding('utf8');
-//
-// process.stdin.on('data', function(text) {
-//   if (text.trim() === 'quit') {
-//     done();
-//   }
-//   try {
-//     eliapi.logMessage(3, eval(text.trim()));
-//   } catch (err) {
-//     eliapi.logMessage(2, err.toString());
-//   }
-// });
-//
-// function done() {
-//   console.log('Quiting..');
-//   process.exit();
-// }
-
 // starting socket.io server
 const io = require("socket.io")(server);
 eliapi.logMessage(0, "socket.io server running on port: " + port);
@@ -75,7 +56,7 @@ eliapi.logMessage(0, "socket.io server running on port: " + port);
 // managing socket.io connections
 io.on("connection", socket => {
 
-  // logging socket's ip address
+  // logging socket"s ip address
   eliapi.logMessage(0, "socket client connected with ip:" + socket.request.connection.remoteAddress.split(":").slice(3)[0]);
 
   // sending all sockets to default room
@@ -100,6 +81,11 @@ io.on("connection", socket => {
   // broadcasting new question to room
   socket.on("question", data => {
     socket.to(data.pin).emit("question", data)
+    if (data.question.startsWith("###")) {
+      socket.to(data.pin).emit("question", {data.pin, data.question.substring(0,3)});
+    } else {
+      socket.to(data.pin).emit("question", {data.pin, xss(data.question)});
+    }
     eliapi.logMessage(0, "question: " + data.question);
   });
 
