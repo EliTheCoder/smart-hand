@@ -34,18 +34,9 @@ const fs = require("fs");
 const eliapi = require("eliapi");
 const util = require("util");
 const express = require("express");
-const acme = require("acme-client");
 
 // declaring varibles
 let rooms = [];
-
-// setting up ssl certificate
-const accountPrivateKey = fs.readFileSync("localhost.key");
-
-const client = new acme.Client({
-    directoryUrl: acme.directory.letsencrypt.staging,
-    accountKey: accountPrivateKey
-});
 
 // initalizing express
 const app = express();
