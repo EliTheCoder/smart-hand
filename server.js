@@ -63,7 +63,7 @@ const server = httpServer.listen(process.env.PORT || 8080, () => {
 	eliapi.logMessage('HTTP Server running on port 80');
 });
 
-httpsServer.listen(process.env.PORT || 443, () => {
+httpsServer.listen(process.env.PORT || 8081, () => {
 	eliapi.logMessage('HTTPS Server running on port 443');
 });
 
