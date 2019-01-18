@@ -25,15 +25,15 @@
 
 "use strict";
 
+// port
+const port = 8080;
+
 // require modules
 const path = require("path");
 const fs = require("fs");
 const eliapi = require("eliapi");
 const util = require("util");
 const express = require("express");
-const acme = require("acme-client");
-const http = require("http");
-const https = require("https");
 
 // declaring varibles
 let rooms = [];
@@ -44,27 +44,8 @@ const app = express();
 // starting express server
 app.use(express.static(path.join(__dirname, "/static")));
 
-// Certificate
-const privateKey = fs.readFileSync('privkey.pem', 'utf8');
-const certificate = fs.readFileSync('cert.pem', 'utf8');
-const ca = fs.readFileSync('chain.pem', 'utf8');
-
-const credentials = {
-	key: privateKey,
-	cert: certificate,
-	ca: ca
-};
-
-// Starting both http & https servers
-const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
-
-const server = httpServer.listen(process.env.PORT || 8080, () => {
-	eliapi.logMessage('HTTP Server running on port 80');
-});
-
-httpsServer.listen(process.env.PORT || 8081, () => {
-	eliapi.logMessage('HTTPS Server running on port 443');
+const server = app.listen(process.env.PORT || port, () => {
+  eliapi.logMessage(0, "web server running on port: " + port);
 });
 
 // allowing console commands
@@ -89,7 +70,7 @@ httpsServer.listen(process.env.PORT || 8081, () => {
 
 // starting socket.io server
 const io = require("socket.io")(server);
-eliapi.logMessage(0, "socket.io server running on port: 80 and 443");
+eliapi.logMessage(0, "socket.io server running on port: " + port);
 
 // managing socket.io connections
 io.on("connection", socket => {
