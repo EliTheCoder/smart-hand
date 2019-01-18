@@ -11,4 +11,5 @@ socket.on("sendCode", data => {
 
 socket.on("question", data => {
   $("footer").before("<div class=\"container-fluid\"><h2 class=\"text-center\">" + data.question + "</h2></div>");
+  $(".container-fluid").click((e)=>{e.target.remove()});
 });
