@@ -81,7 +81,7 @@ io.on("connection", socket => {
   // broadcasting new question to room
   socket.on("question", data => {
     if (data.question.startsWith("###")) {
-      socket.to(data.pin).emit("question", {pin:data.pin, question:data.question.substring(0,3)});
+      socket.to(data.pin).emit("question", {pin:data.pin, question:data.question.substring(3)});
     } else {
       socket.to(data.pin).emit("question", {pin:data.pin, question:xss(data.question)});
     }
