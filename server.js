@@ -59,11 +59,11 @@ const credentials = {
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
 
-const server = httpServer.listen(80, () => {
+const server = httpServer.listen(process.env.PORT || 8080, () => {
 	eliapi.logMessage('HTTP Server running on port 80');
 });
 
-httpsServer.listen(443, () => {
+httpsServer.listen(process.env.PORT || 443, () => {
 	eliapi.logMessage('HTTPS Server running on port 443');
 });
 
