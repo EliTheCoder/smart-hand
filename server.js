@@ -57,7 +57,7 @@ eliapi.logMessage(0, "socket.io server running on port: " + port);
 io.on("connection", socket => {
 
   // logging socket"s ip address
-  eliapi.logMessage(0, "socket client connected with ip:" + socket.request.connection.remoteAddress.split(":").slice(3)[0]);
+  eliapi.logMessage(0, "socket client connected with ip: " + socket.request.connection.remoteAddress.split(":").slice(3)[0]);
 
   // sending all sockets to default room
   socket.join("default");
