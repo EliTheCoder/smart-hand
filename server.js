@@ -80,7 +80,6 @@ io.on("connection", socket => {
 
   // broadcasting new question to room
   socket.on("question", data => {
-    socket.to(data.pin).emit("question", data)
     if (data.question.startsWith("###")) {
       socket.to(data.pin).emit("question", {pin:data.pin, question:data.question.substring(0,3)});
     } else {
