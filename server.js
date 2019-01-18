@@ -25,15 +25,13 @@
 
 "use strict";
 
-// port
-const port = 8080;
-
 // require modules
 const path = require("path");
 const fs = require("fs");
 const eliapi = require("eliapi");
 const util = require("util");
 const express = require("express");
+const acme = require("acme-client");
 
 // declaring varibles
 let rooms = [];
@@ -44,8 +42,27 @@ const app = express();
 // starting express server
 app.use(express.static(path.join(__dirname, "/static")));
 
-const server = app.listen(process.env.PORT || port, () => {
-  eliapi.logMessage(0, "web server running on port: " + port);
+// Certificate
+const privateKey = fs.readFileSync('privkey.pem', 'utf8');
+const certificate = fs.readFileSync('cert.pem', 'utf8');
+const ca = fs.readFileSync('chain.pem', 'utf8');
+
+const credentials = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
+
+// Starting both http & https servers
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+
+httpServer.listen(80, () => {
+	eliapi.logMessage('HTTP Server running on port 80');
+});
+
+httpsServer.listen(443, () => {
+	eliapi.logMessage('HTTPS Server running on port 443');
 });
 
 // allowing console commands
