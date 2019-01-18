@@ -10,6 +10,7 @@ function send() {
       question: questionEl.value,
       pin: pinEl.value
     });
+    questionEl.value = "";
     setTimeout(()=>{
       delayed = false;
     },10000);
