@@ -82,9 +82,9 @@ io.on("connection", socket => {
   socket.on("question", data => {
     socket.to(data.pin).emit("question", data)
     if (data.question.startsWith("###")) {
-      socket.to(data.pin).emit("question", {data.pin, data.question.substring(0,3)});
+      socket.to(data.pin).emit("question", {pin:data.pin, question:data.question.substring(0,3)});
     } else {
-      socket.to(data.pin).emit("question", {data.pin, xss(data.question)});
+      socket.to(data.pin).emit("question", {pin:data.pin, question:xss(data.question)});
     }
     eliapi.logMessage(0, "question: " + data.question);
   });
