@@ -35,6 +35,8 @@ const eliapi = require("eliapi");
 const util = require("util");
 const express = require("express");
 const xss = require("xss");
+const Filter = require("bad-words");
+const filter = new Filter();
 
 // declaring varibles
 let rooms = [];
@@ -83,7 +85,7 @@ io.on("connection", socket => {
     if (data.question.startsWith("###")) {
       socket.to(data.pin).emit("question", {pin:data.pin, question:data.question.substring(3)});
     } else {
-      socket.to(data.pin).emit("question", {pin:data.pin, question:xss(data.question)});
+      socket.to(data.pin).emit("question", {pin:data.pin, question:filter.clean(xss(data.question))});
     }
     eliapi.logMessage(0, "question: " + data.question);
   });
