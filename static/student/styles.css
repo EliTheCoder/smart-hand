@@ -55,7 +55,7 @@ body {
 	position: absolute;
 	width: 23%;
 	height: 8%;
-	left: 3%;
+	left: 125px;
 	top: 3%;
 
 	font-family: "ZCOOL QingKe HuangYou";
@@ -67,7 +67,7 @@ body {
 	color: #FFFFFF;
 
   margin-top: 0;
-  margin-left: 5%;
+  margin-left: 0;
 }
 
 #logo {
