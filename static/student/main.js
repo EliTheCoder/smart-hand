@@ -2,7 +2,15 @@ let questionEl = document.getElementById("messagebar");
 let delayed = false;
 const socket = io();
 
-function send() {
+$("#sendbutton").click(() => {
+  fullsendfortheboys();
+});
+
+$("#messagebar").keypress(e => {
+  if (e.keyCode == 69) fullsendfortheboys();
+});
+
+function fullsendfortheboys() {
   if (!delayed) {
     delayed = true;
     socket.emit("question", {
@@ -12,6 +20,6 @@ function send() {
     $("#messagebar").val("");
     setTimeout(() => {
       delayed = false;
-    },10000);
+    }, 10000);
   }
 }
