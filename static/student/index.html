@@ -19,48 +19,18 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
   <title>Smart Hand - Student</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.2/css/uikit-core.css" />
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-  <style>
-    * {
-      font-family:'Josefin Sans',sans-serif;
-      }
-    footer {
-      position:fixed;
-      left:0;
-      bottom:0;
-      width:100%;
-      text-align:center;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="/">Smart Hand</a>
-      </div>
-    </div>
-  </nav>
-  <div class="jumbotron">
-    <div class="container">
-      <hr />
-      <div class="form-group">
-        <input type="text" placeholder="Class PIN" class="form-control" id="class-pin">
-      </div>
-      <hr />
-      <div class="form-group">
-        <input type="text" placeholder="Question" class="form-control" id="question">
-      </div>
-      <hr />
-      <button onclick="send()" class="btn btn-lg btn-success send-button">Send</button>
-    </div>
-  </div>
-  <footer>
-    <p>
-      Copyright &copy; Eli Frigo 2019
-    </p>
-  </footer>
+  <div id="topbar"></div>
+  <img id="logo" />
+  <h1 id="title">Smart Hand</h1>
+  <input type="text" id="pininput" />
+  <div id="bottombar"></div>
+  <input type="text" id="messagebar" />
+  <button id="sendbutton">SEND</button>
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
