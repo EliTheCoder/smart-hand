@@ -1,4 +1,3 @@
-let questionEl = document.getElementById("messagebar");
 let delayed = false;
 const socket = io();
 
@@ -7,7 +6,7 @@ $("#sendbutton").click(() => {
 });
 
 $("#messagebar").keypress(e => {
-  if (e.keyCode == 69) fullsendfortheboys();
+  if (e.which == 13) fullsendfortheboys();
 });
 
 function fullsendfortheboys() {
@@ -17,6 +16,7 @@ function fullsendfortheboys() {
       question: $("#messagebar").val(),
       pin: $("#pininput").val()
     });
+    $("#messagebox").append("<hr />"+$("#messagebar").val());
     $("#messagebar").val("");
     setTimeout(() => {
       delayed = false;

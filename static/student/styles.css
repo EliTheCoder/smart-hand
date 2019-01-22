@@ -133,3 +133,20 @@ body {
 
 	color: #000000;
 }
+
+#messagebox {
+  position: absolute;
+  width: 97%;
+  height: 64%;
+  left: 3%;
+  top: 16%;
+
+  font-family: "ZCOOL QingKe HuangYou";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 41px;
+  font-size: 30px;
+  letter-spacing: -0.02em;
+
+  color: #FFFFFF;
+}
