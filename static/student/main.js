@@ -16,7 +16,7 @@ function fullsendfortheboys() {
       question: $("#messagebar").val(),
       pin: $("#pininput").val()
     });
-    $("#messagebox").append($("#messagebar").val()+"<br />");
+    $("#messagebox").append("<p>" + $("#messagebar").val() + "</p><br />");
     $("#messagebar").val("");
     setTimeout(() => {
       delayed = false;
