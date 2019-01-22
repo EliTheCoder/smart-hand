@@ -83,9 +83,9 @@ io.on("connection", socket => {
   // broadcasting new question to room
   socket.on("question", data => {
     if (data.question.startsWith("###")) {
-      socket.to(data.pin).emit("question", {pin:data.pin, question:data.question.substring(3)});
+      socket.emit("question", {pin:data.pin, question:data.question.substring(3)});
     } else {
-      socket.to(data.pin).emit("question", {pin:data.pin, question:filter.clean(xss(data.question))});
+      socket.emit("question", {pin:data.pin, question:filter.clean(xss(data.question))});
     }
     eliapi.logMessage(0, "question: " + data.question);
   });

@@ -151,4 +151,5 @@ body {
   color: #FFFFFF;
 
   word-wrap: break-word;
+  overflow: auto;
 }
