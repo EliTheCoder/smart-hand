@@ -93,6 +93,8 @@ body {
 	text-align: center;
 	letter-spacing: 0.06em;
 
+  transition: 0.2s;
+
 	color: #FFFFFF;
 }
 
@@ -114,5 +116,19 @@ body {
 	text-align: center;
 	letter-spacing: 0.06em;
 
+  transition: 0.2s;
+
 	color: #FFFFFF;
+}
+
+#studentbutton:hover {
+	box-shadow: 10px 10px;
+	border-radius: 75px;
+	transition: 0.5s;
+}
+
+#teacherbutton:hover {
+	box-shadow: -10px 10px;
+	border-radius: 75px;
+	transition: 0.5s;
 }
