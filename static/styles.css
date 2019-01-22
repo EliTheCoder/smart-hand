@@ -122,13 +122,15 @@ body {
 }
 
 #studentbutton:hover {
-	box-shadow: 10px 10px;
+	box-shadow: 10px 10px 10px;
 	border-radius: 75px;
+  letter-spacing: 0.1em;
 	transition: 0.5s;
 }
 
 #teacherbutton:hover {
-	box-shadow: -10px 10px;
+	box-shadow: -10px 10px 10px;
 	border-radius: 75px;
+  letter-spacing: 0.1em;
 	transition: 0.5s;
 }
