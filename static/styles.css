@@ -1,0 +1,116 @@
+/*
+Copyright (C) 2019 Eli Frigo
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>. */
+
+body {
+  background: #2F2E38;
+}
+
+#topbar {
+  position: absolute;
+	width: 100%;
+	height: 38%;
+	left: 0px;
+	top: 0px;
+
+	background: #212228;
+	box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.75);
+}
+
+#title {
+	position: absolute;
+	width: 47%;
+	height: 16%;
+	left: 27%;
+	top: 5%;
+
+	font-family: ZCOOL QingKe HuangYou;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 96px;
+	text-align: center;
+	letter-spacing: 0.06em;
+
+	color: #FFFFFF;
+}
+
+#subtitle {
+  position: absolute;
+	width: 45%;
+	height: 12%;
+	left: 28%;
+	top: 21%;
+
+	font-family: "ZCOOL QingKe HuangYou";
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 48px;
+	text-align: center;
+	letter-spacing: 0.06em;
+
+	color: #FFFFFF;
+}
+
+/* DO NOT PERCENTAGIZE THE LOGO'S WIDTH AND HEIGHT. JUST THE LEFT AND TOP PLEASE THANK YOU LIL BUDDY */
+
+#logo {
+  position: absolute;
+	width: 337px;
+	height: 340px;
+	left: 38%;
+	top: 42%;
+}
+
+#studentbutton {
+  position: absolute;
+	width: 34%;
+	height: 28%;
+	left: 5%;
+	top: 55%;
+
+	background: #5C55ED;
+	border-radius: 50px;
+  font-family: "ZCOOL QingKe HuangYou";
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 70px;
+	text-align: center;
+	letter-spacing: 0.06em;
+
+	color: #FFFFFF;
+}
+
+#teacherbutton {
+  position: absolute;
+	width: 34%;
+	height: 28%;
+	left: 60%;
+	top: 55%;
+
+	background: #3DC617;
+	border-radius: 50px;
+  font-family: "ZCOOL QingKe HuangYou";
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	font-size: 70px;
+	text-align: center;
+	letter-spacing: 0.06em;
+
+	color: #FFFFFF;
+}

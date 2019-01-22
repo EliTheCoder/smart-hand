@@ -75,17 +75,15 @@ io.on("connection", socket => {
   socket.on("teacher", data => {
     let newCode = makeId();
     socket.emit("sendCode", newCode);
-    socket.join(newCode);
-    socket.leave("default");
     eliapi.logMessage(0, "teacher event");
   });
 
   // broadcasting new question to room
   socket.on("question", data => {
     if (data.question.startsWith("###")) {
-      socket.emit("question", {pin:data.pin, question:data.question.substring(3)});
+      io.emit("question", {pin:data.pin, question:data.question.substring(3)});
     } else {
-      socket.emit("question", {pin:data.pin, question:filter.clean(xss(data.question))});
+      io.emit("question", {pin:data.pin, question:filter.clean(xss(data.question))});
     }
     eliapi.logMessage(0, "question: " + data.question);
   });
