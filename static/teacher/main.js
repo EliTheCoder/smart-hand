@@ -1,4 +1,3 @@
-let pinEl = document.getElementById("class-pin");
 let classPin;
 const socket = io();
 
@@ -6,13 +5,13 @@ socket.emit("teacher");
 
 socket.on("sendCode", data => {
   classPin = data;
-  $("#class-pin").html("Class PIN: " + classPin);
+  $("#pinbar").html(classPin);
 });
 
 socket.on("question", data => {
   if (data.pin == classPin) {
-    $("footer").before("<p class=\"message\">" + data.question + "</p>");
-    $(".container-fluid").click((e) => {
+    $("messagebox").append("<p class=\"message\">" + data.question + "</p>");
+    $(".message").click((e) => {
       e.target.remove();
     });
   }
