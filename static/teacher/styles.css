@@ -1,0 +1,99 @@
+/*
+Copyright (C) 2019 Eli Frigo
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>. */
+
+body {
+	background: #2F2E38;
+}
+
+#topbar {
+  position: absolute;
+	width: 100%;
+	height: 14%;
+	left: 0px;
+	top: 0px;
+
+	background: #3A464F;
+}
+
+#pinbar {
+  position: absolute;
+	width: 100%;
+	height: 28%;
+	left: 0px;
+	top: 14%;
+
+	background: #212228;
+	box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.75);
+
+  font-family: "ZCOOL QingKe HuangYou";
+	font-style: normal;
+	font-weight: normal;
+	line-height: 124px;
+	font-size: 90px;
+	text-align: center;
+	letter-spacing: -0.02em;
+
+	color: #FFFFFF;
+}
+
+#messagebox {
+  position: absolute;
+	width: 97%;
+	height: 53%;
+	left: 1%;
+	top: 45%;
+
+	font-family: "ZCOOL QingKe HuangYou";
+	font-style: normal;
+	font-weight: normal;
+	line-height: 69px;
+	font-size: 50px;
+	text-align: center;
+	letter-spacing: -0.02em;
+
+	color: #FFFFFF;
+}
+
+#title {
+	position: absolute;
+	width: 23%;
+	height: 8%;
+	left: 25px;
+	top: 3%;
+
+	font-family: "ZCOOL QingKe HuangYou";
+	line-height: 66px;
+	font-size: 48px;
+	text-align: center;
+	letter-spacing: -0.02em;
+
+	color: #FFFFFF;
+
+  margin-top: 0;
+  margin-left: 0;
+}
+
+#logo {
+  position: absolute;
+	width: 75px;
+	height: 75px;
+	left: 1%;
+	top: 2%;
+}
+
+.message:hover {
+  text-decoration: line-through;
+}

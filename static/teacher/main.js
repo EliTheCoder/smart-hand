@@ -11,7 +11,7 @@ socket.on("sendCode", data => {
 
 socket.on("question", data => {
   if (data.pin == classPin) {
-    $("footer").before("<div class=\"container-fluid\"><h2 class=\"text-center\">" + data.question + "</h2></div>");
+    $("footer").before("<p class=\"message\">" + data.question + "</p>");
     $(".container-fluid").click((e) => {
       e.target.remove();
     });
