@@ -83,6 +83,7 @@ body {
 	top: 55%;
 
 	background: #5C55ED;
+  border-style: none;
 	border-radius: 50px;
   font-family: "ZCOOL QingKe HuangYou";
 	font-style: normal;
@@ -103,6 +104,7 @@ body {
 	top: 55%;
 
 	background: #3DC617;
+  border-style: none;
 	border-radius: 50px;
   font-family: "ZCOOL QingKe HuangYou";
 	font-style: normal;
