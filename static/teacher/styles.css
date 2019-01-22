@@ -67,6 +67,9 @@ body {
 	letter-spacing: -0.02em;
 
 	color: #FFFFFF;
+
+  word-wrap: break-word;
+  overflow: auto;
 }
 
 #title {
