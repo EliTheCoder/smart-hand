@@ -85,7 +85,7 @@ io.on("connection", socket => {
     } else {
       io.emit("question", {pin:data.pin, question:filter.clean(xss(data.question))});
     }
-    eliapi.logMessage(0, "question: " + data.question);
+    eliapi.logMessage(4, "pin: " + data.pin + "question: " + data.question);
   });
 
 });
