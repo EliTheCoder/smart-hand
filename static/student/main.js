@@ -9,6 +9,12 @@ $("#messagebar").keypress(e => {
   if (e.which == 13) fullsendfortheboys();
 });
 
+socket.on("question", data => {
+  if (data.pin == $("#pininput").val()) {
+    $("#messagebox").append("<p>" + data.question + "</p>");
+  }
+});
+
 function fullsendfortheboys() {
   if (!delayed) {
     delayed = true;
