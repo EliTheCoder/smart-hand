@@ -48,7 +48,7 @@ body {
 	font-size: 48px;
 	text-align: center;
 	letter-spacing: -0.02em;
-	
+
 	transition: 0.5s;
 
 	color: #FFFFFF;
@@ -71,7 +71,7 @@ body {
 	font-size: 48px;
 	text-align: center;
 	letter-spacing: -0.02em;
-	
+
 	transition: 0.5s;
 
 	color: #FFFFFF;
@@ -111,6 +111,7 @@ body {
 	left: 85%;
 	top: 85%;
 
+  border-style: none;
 	font-family: "ZCOOL QingKe HuangYou";
 	font-style: normal;
 	font-weight: normal;
@@ -118,7 +119,7 @@ body {
 	font-size: 48px;
 	text-align: center;
 	letter-spacing: -0.02em;
-	
+
 	transition: 0.2s;
 
 	color: #FFFFFF;
