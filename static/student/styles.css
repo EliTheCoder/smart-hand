@@ -53,6 +53,7 @@ body {
 
 	color: #FFFFFF;
 }
+
 #pininput:hover {
 	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.75);
 	transition: 0.5s;
@@ -115,8 +116,12 @@ body {
 
 	color: #FFFFFF;
 
-  background: #5C55ED;
+ 	background: #5C55ED;
 	border-radius: 20px;
+}
+
+#pininput:active {
+	background: #3f3aa5;
 }
 
 #messagebar {
