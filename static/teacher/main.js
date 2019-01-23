@@ -10,9 +10,9 @@ socket.on("sendCode", data => {
 
 socket.on("question", data => {
   if (data.pin == classPin) {
-    $("#messagebox").append("<p class=\"message\">" + data.question + "</p>");
+    $("#messagebox").append("<p id=\"" + data.id + "\" class=\"message\">" + data.question + "</p>");
     $(".message").click((e) => {
-      socket.emit("remove", e.target.attr("id"))
+      socket.emit("remove", e.target.id);
       e.target.remove();
     });
   }

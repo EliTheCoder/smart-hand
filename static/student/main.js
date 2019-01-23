@@ -11,7 +11,7 @@ $("#messagebar").keypress(e => {
 
 socket.on("question", data => {
   if (data.pin == $("#pininput").val()) {
-    $("#messagebox").append("<p>" + data.question + "</p>");
+    $("#messagebox").append("<p id=\"" + data.id + "\">" + data.question + "</p>");
   }
 });
 

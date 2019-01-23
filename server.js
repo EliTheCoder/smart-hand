@@ -87,7 +87,7 @@ io.on("connection", socket => {
 
   // broadcasting new question to room
   socket.on("question", data => {
-    let msgId = makeMsgId;
+    let msgId = makeMsgId();
     logs[msgId] = {
       id: msgId,
       time: new Date(),
