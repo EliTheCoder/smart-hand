@@ -71,11 +71,18 @@ body {
 	font-size: 48px;
 	text-align: center;
 	letter-spacing: -0.02em;
+	
+	transistion: 0.5;
 
 	color: #FFFFFF;
 
   margin-top: 0;
   margin-left: 0;
+}
+
+#title:hover {
+	letter-spacing: -0.05em;
+	transition 2s;
 }
 
 #logo {
@@ -118,11 +125,6 @@ body {
 
  	background: #5C55ED;
 	border-radius: 20px;
-}
-
-#sendbutton:active {
-	background: #3f3aa5;
-	transition: 0s;
 }
 
 #messagebar {
