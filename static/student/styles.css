@@ -163,7 +163,7 @@ body {
 }
 
 #sendbutton:hover {
-	border-radius: 75px;
+	border-radius: 35px;
   letter-spacing: 0.1em;
 	transition: 1s;
 }
