@@ -81,6 +81,7 @@ io.on("connection", socket => {
 
   // broadcasting message deletions to everyone
   socket.on("remove", data => {
+    eliapi.logMessage(0, "id: " + data);
     io.emit("remove", data);
   })
 
