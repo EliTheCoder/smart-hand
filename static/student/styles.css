@@ -81,7 +81,7 @@ body {
 }
 
 #title:hover {
-	letter-spacing: -0.05em;
+	letter-spacing: 0.03em;
 	transition 2s;
 }
 
