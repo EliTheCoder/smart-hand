@@ -32,7 +32,7 @@ function fullsendfortheboys() {
 
 setInterval(()=>{
   if ($("#cooldownbar").width() > 0 && delayed) {
-    $("#cooldownbar").width(Math.round($("#cooldownbar").width()/1440) - 1 + "%");
     console.log(Math.round($("#cooldownbar").width()/1440))
+    $("#cooldownbar").width(Math.round($("#cooldownbar").width()/1440) - 1 + "%");
   }
 }, 100);
