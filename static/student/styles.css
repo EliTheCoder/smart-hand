@@ -159,5 +159,5 @@ body {
 #sendbutton:hover {
 	border-radius: 75px;
   letter-spacing: 0.1em;
-	transition: 0.5s;
+	transition: 1s;
 }
