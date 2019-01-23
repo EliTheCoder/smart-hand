@@ -40,6 +40,7 @@ const filter = new Filter();
 
 // declaring varibles
 let rooms = [];
+let logs = {};
 
 // initalizing express
 const app = express();
@@ -78,12 +79,32 @@ io.on("connection", socket => {
     eliapi.logMessage(0, "teacher event");
   });
 
+  // broadcasting message deletions to everyone
+  socket.on("remove", data => {
+    io.emit("remove", data);
+  })
+
   // broadcasting new question to room
   socket.on("question", data => {
+    let msgId = makeMsgId;
+    logs[msgId] = {
+      id: msgId,
+      time: new Date(),
+      pin: data.pin,
+      author: socket.id
+    }
     if (data.question.startsWith("###")) {
-      io.emit("question", {pin:data.pin, question:data.question.substring(3)});
+      io.emit("question", {
+        pin: data.pin,
+        question: data.question.substring(3),
+        id: msgId
+      });
     } else {
-      io.emit("question", {pin:data.pin, question:filter.clean(xss(data.question))});
+      io.emit("question", {
+        pin: data.pin,
+        question: filter.clean(xss(data.question)),
+        id: msgId
+      });
     }
     eliapi.logMessage(4, "pin: " + data.pin + "question: " + data.question);
   });
@@ -96,6 +117,16 @@ function makeId() {
   var possible = "abcdefghijkmnopqrstuvwxyz123456789";
 
   for (var i = 0; i < 5; i++)
+    text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+  return text;
+}
+
+function makeMsgId() {
+  var text = "";
+  var possible = "0123456789";
+
+  for (var i = 0; i < 10; i++)
     text += possible.charAt(Math.floor(Math.random() * possible.length));
 
   return text;

@@ -15,6 +15,10 @@ socket.on("question", data => {
   }
 });
 
+socket.on("remove", data => {
+  $("#" + data).remove();
+});
+
 function fullsendfortheboys() {
   if (!delayed) {
     delayed = true;
