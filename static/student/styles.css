@@ -122,6 +122,7 @@ body {
 
 #sendbutton:active {
 	background: #3f3aa5;
+	transition: 0s;
 }
 
 #messagebar {
