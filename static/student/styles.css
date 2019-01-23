@@ -104,6 +104,8 @@ body {
 	font-size: 48px;
 	text-align: center;
 	letter-spacing: -0.02em;
+	
+	transition: 0.2s;
 
 	color: #FFFFFF;
 
@@ -152,4 +154,10 @@ body {
 
   word-wrap: break-word;
   overflow: auto;
+}
+
+#sendbutton:hover {
+	border-radius: 75px;
+  letter-spacing: 0.1em;
+	transition: 0.5s;
 }
