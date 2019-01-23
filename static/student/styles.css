@@ -176,3 +176,13 @@ body {
   letter-spacing: 0.1em;
 	transition: 1s;
 }
+
+#cooldownbar {
+  position: absolute;
+  width: 0%;
+  height: 1%;
+  left: 0px;
+  top: 82%;
+
+  background: #21A2FF;
+}

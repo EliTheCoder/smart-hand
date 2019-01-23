@@ -17,6 +17,7 @@ socket.on("question", data => {
 
 function fullsendfortheboys() {
   if (!delayed) {
+    $("#cooldownbar").width("100%");
     delayed = true;
     socket.emit("question", {
       question: $("#messagebar").val(),
@@ -28,3 +29,9 @@ function fullsendfortheboys() {
     }, 10000);
   }
 }
+
+setInterval(()=>{
+  if ($("#cooldownbar").width() > 0 && delayed) {
+    $("#cooldownbar").width($("#cooldownbar").width() - 1 + "%");
+  }
+}, 100);
