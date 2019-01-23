@@ -48,11 +48,14 @@ body {
 	font-size: 48px;
 	text-align: center;
 	letter-spacing: -0.02em;
+	
+	transition: 0.5s;
 
 	color: #FFFFFF;
 }
 #pininput:hover {
 	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.75);
+	transition: 0.5s;
 }
 
 #title {
