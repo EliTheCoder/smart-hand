@@ -20,7 +20,7 @@ socket.on("remove", data => {
 });
 
 function fullsendfortheboys() {
-  if (!delayed) {
+  if (!delayed && $("question").val().substr(-1) != "?")) {
     delayed = true;
     socket.emit("question", {
       question: $("#messagebar").val(),
