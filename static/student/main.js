@@ -20,15 +20,11 @@ socket.on("remove", data => {
 });
 
 socket.on("ban", data => {
-  if (window.localStorage.bans) {
-    window.localStorage.bans = JSON.parse(window.localStorage.bans).push(data);
-  } else {
-    window.localStorage.bans = [data];
-  }
+  window.localStorage.banned = data;
 });
 
 function fullsendfortheboys() {
-  if (!delayed) {
+  if (!delayed && window.localStorage.banned != $("#pininput").val()) {
     delayed = true;
     socket.emit("question", {
       question: $("#messagebar").val(),
