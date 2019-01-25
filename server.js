@@ -81,8 +81,14 @@ io.on("connection", socket => {
 
   // broadcasting message deletions to everyone
   socket.on("remove", data => {
-    eliapi.logMessage(0, "id: " + data);
+    eliapi.logMessage(0, "removal id: " + data);
     io.emit("remove", data);
+  })
+
+  // broadcasting message deletions to everyone
+  socket.on("ban", data => {
+    eliapi.logMessage(0, "ban id: " + data.id);
+    io.to(`${logs[data.id].author}`).emit("ban", data.pin);
   })
 
   // broadcasting new question to room

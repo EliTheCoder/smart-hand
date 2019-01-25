@@ -19,6 +19,14 @@ socket.on("remove", data => {
   $("#" + data).remove();
 });
 
+socket.on("ban", data => {
+  if (window.localStorage.bans) {
+    window.localStorage.bans = JSON.parse(window.localStorage.bans).push(data);
+  } else {
+    window.localStorage.bans = [data];
+  }
+});
+
 function fullsendfortheboys() {
   if (!delayed) {
     delayed = true;

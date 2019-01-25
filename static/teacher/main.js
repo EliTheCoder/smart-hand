@@ -15,5 +15,10 @@ socket.on("question", data => {
       socket.emit("remove", e.target.id);
       e.target.remove();
     });
+    $(".message").contextmenu((e) => {
+      socket.emit("remove", e.target.id);
+      socket.emit("ban", {id: e.target.id, pin: classPin});
+      e.target.remove();
+    });
   }
 });
