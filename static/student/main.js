@@ -31,8 +31,10 @@ function fullsendfortheboys() {
       pin: $("#pininput").val()
     });
     $("#messagebar").val("");
+    $("#messagebar").css("visibility", "hidden");
     setTimeout(() => {
       delayed = false;
+      $("#messagebar").css("visibility", "visibility");
     }, 10000);
   }
 }
