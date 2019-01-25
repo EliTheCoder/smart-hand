@@ -34,7 +34,7 @@ function fullsendfortheboys() {
     $("#messagebar").css("visibility", "hidden");
     setTimeout(() => {
       delayed = false;
-      $("#messagebar").css("visibility", "visibility");
+      $("#messagebar").css("visibility", "visible");
     }, 10000);
   }
 }
