@@ -13,7 +13,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "acme-client": "^2.2.2",
     "bad-words": "^3.0.0",
     "eliapi": "0.0.1",
     "express": "^4.16.4",
