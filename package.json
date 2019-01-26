@@ -4,11 +4,12 @@
   "description": "A tool for teachers and students to make raising your hand obselete.",
   "author": "EliTheCoder <ex.games.org@gmail.com>",
   "license": "GPL-3.0",
+  "homepage": "https://smart-hand.herokuapp.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/EliTheCoder/smart-hand.git"
   },
-  "scripts": {
+""  "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
