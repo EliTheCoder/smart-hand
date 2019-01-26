@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/EliTheCoder/smart-hand.git"
   },
-""  "scripts": {
+  "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
