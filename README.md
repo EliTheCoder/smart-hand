@@ -1,2 +1,2 @@
 # smart hand
-A tool for teachers and students to make raising your hand obselete.
+A better way to raise your hand.
