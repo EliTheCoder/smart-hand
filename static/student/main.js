@@ -15,6 +15,15 @@ socket.on("question", data => {
   }
 });
 
+$("#pininput").change(() => {
+  if ($("#pininput").val()) != window.localStorage.banned {
+     $("#messagebar").css("visibility", "visible");
+  }
+  else {
+     $("#messagebar").css("visibility", "hidden");
+  }
+});
+
 socket.on("remove", data => {
   $("#" + data).remove();
 });
