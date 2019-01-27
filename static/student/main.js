@@ -21,6 +21,7 @@ socket.on("remove", data => {
 
 socket.on("ban", data => {
   window.localStorage.banned = data;
+   $("#messagebar").css("visibility", "hidden");
 });
 
 function fullsendfortheboys() {
