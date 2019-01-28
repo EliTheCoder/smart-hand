@@ -1,2 +1,3 @@
-# smart hand
-A better way to raise your hand.
+# Smart Hand
+### A better way to raise your hand.
+The way Smart Hand works is the teacher and the students both go to [smarthand.tk](http://smarthand.tk) and click the button for their respective page. The teacher's screen will have a randomly generated pin that he or she will give to the students and they will type in to their pin box. The students can now type questions into their chat bar with a cooldown of 10 seconds per question. The questions will appear on the teacher's screen and the teacher can now left click a question to delete it once he or she has answered the question, and can right click the question to ban the student that sent that question so that the student can no longer ask questions.
